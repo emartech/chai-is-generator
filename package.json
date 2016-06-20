@@ -37,5 +37,6 @@
     "semantic-release": "4.3.5",
     "validate-commit-message": "3.0.1"
   },
-  "homepage": "https://github.com/emartech/chai-is-generator#readme"
+  "homepage": "https://github.com/emartech/chai-is-generator#readme",
+  "version": "0.0.1"
 }
