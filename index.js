@@ -3,6 +3,7 @@
 module.exports = function(chai) {
   var assert = chai.assert;
   var Assertion = chai.Assertion;
+
   Assertion.addProperty('generator', function() {
     this.assert(this._obj.constructor.name === 'GeneratorFunction',
       'expected #{this} to be a generator',
