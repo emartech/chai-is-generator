@@ -1,0 +1,41 @@
+{
+  "name": "chai-is-generator",
+  "description": "Chai assertions for generators",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha $(find . -name \"*.spec.js\" -not -path \"./node_modules/*\")",
+    "code-style": "eslint $(find . -name \"*.js\" -not -path \"./node_modules/*\")",
+    "validate-commit-msg": "validate-commit-msg",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/dist/lib/plugin-noop.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emartech/chai-is-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emartech/chai-is-generator/issues"
+  },
+  "pre-commit": [
+    "code-style",
+    "validate-commit-msg"
+  ],
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "2.13.0",
+    "eslint-config-emarsys": "4.0.0",
+    "eslint-plugin-no-only-tests": "1.1.0",
+    "eslint-plugin-security": "1.2.0",
+    "mocha": "2.5.3",
+    "pre-commit": "1.1.3",
+    "semantic-release": "4.3.5",
+    "validate-commit-message": "3.0.1"
+  },
+  "homepage": "https://github.com/emartech/chai-is-generator#readme"
+}

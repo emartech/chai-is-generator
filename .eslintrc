@@ -1,0 +1,16 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "globals": {
+    "expect": true
+  },
+  "rules": {
+    "no-unused-expressions": 0
+  },
+  "extends": [
+    "emarsys"
+  ]
+}
