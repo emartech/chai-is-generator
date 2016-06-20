@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function(chai) {
-  var assert = chai.assert;
   var Assertion = chai.Assertion;
 
   Assertion.addProperty('generator', function() {
@@ -11,7 +10,7 @@ module.exports = function(chai) {
     );
   });
 
-  assert.isGenerator = function(value, msg) {
+  chai.assert.isGenerator = function(value, msg) {
     new Assertion(value, msg).generator;
   };
 };
