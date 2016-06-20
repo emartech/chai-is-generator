@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/emartech/chai-is-generator.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Emarsys",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/emartech/chai-is-generator/issues"
   },
