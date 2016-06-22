@@ -1,42 +1,40 @@
 'use strict';
 
-var chai = require('chai');
+const chai = require('chai');
+chai.should();
 chai.use(require('./'));
 
 describe('chai-is-generator', function() {
+  const generatorFunction = function*() {};
+  const plainFunction = function() {};
 
-  describe('subject is a generator', function() {
 
-    const subject = function*() {};
+  describe('framework', function() {
 
-    it('should pass for .generator', function() {
-      chai.expect(subject).generator;
+    describe('assert', function() {
+
+      it('should pass for a generator function', function() { chai.assert.isGenerator(generatorFunction); });
+
+      it('should pass "not" for a function', function() { chai.assert.isNotGenerator(plainFunction); });
+
     });
 
-    it('should fail for .not.generator', function(done) {
-      try {
-        chai.expect(subject).not.generator;
-      } catch (e) {
-        done();
-      }
+
+    describe('expect', function() {
+
+      it('should pass for a generator function', function() { chai.expect(generatorFunction).to.be.generator; });
+
+      it('should pass "not" for a function', function() { chai.expect(plainFunction).not.to.be.generator; });
+
     });
 
-  });
 
-  describe('subject is a function', function() {
+    describe('should', function() {
 
-    const subject = function() {};
+      it('should pass for a generator function', function() { generatorFunction.should.be.generator; });
 
-    it('should fail for .generator', function(done) {
-      try {
-        chai.expect(subject).generator;
-      } catch (e) {
-        done();
-      }
-    });
+      it('should pass "not" for a function', function() { plainFunction.should.not.be.generator; });
 
-    it('should pass for .not.generator', function() {
-      chai.expect(subject).not.generator;
     });
 
   });

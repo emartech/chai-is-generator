@@ -1,9 +1,9 @@
 'use strict';
 
-var isGenerator = require('is-generator').fn;
+const isGenerator = require('is-generator').fn;
 
 module.exports = function(chai) {
-  var Assertion = chai.Assertion;
+  const Assertion = chai.Assertion;
 
   Assertion.addProperty('generator', function() {
     this.assert(isGenerator(this._obj), 'expected #{this} to be a generator', 'expected #{this} not to be a generator');
@@ -11,5 +11,9 @@ module.exports = function(chai) {
 
   chai.assert.isGenerator = function(value, msg) {
     new Assertion(value, msg).generator;
+  };
+
+  chai.assert.isNotGenerator = function(value, msg) {
+    new Assertion(value, msg).not.generator;
   };
 };
