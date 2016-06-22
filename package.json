@@ -26,6 +26,9 @@
     "code-style",
     "validate-commit-msg"
   ],
+  "peerDependencies": {
+    "chai": ">= 2.1.2 < 4"
+  },
   "devDependencies": {
     "chai": "3.5.0",
     "eslint": "2.13.0",
